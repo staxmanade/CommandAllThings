@@ -13,4 +13,6 @@ If you have this setup, it will re-route the `gulp test` command over and execut
 
 ![sample rake task](assets/SampleRakeCommand.png)
 
-### [PowerShell](PowerShell/)
+### Get it for: [PowerShell](PowerShell/)
+
+### Get it for: bash (todo)
