@@ -11,4 +11,6 @@ grunt.registerMultiTask('log', 'Log stuff.', function() {
 });
 
 
-grunt.registerTask('default', ['log']);
+grunt.registerTask('test', ['log']);
+
+grunt.registerTask('default', ['test']);

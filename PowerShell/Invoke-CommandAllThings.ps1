@@ -30,10 +30,10 @@ function Invoke-CommandAllThings {
 
     foreach($key in $providers.Keys) {
         $p = $providers[$key];
-        if( & $p.isProject ) {
+        if( (& $p.isProject) ) {
             $wasInvoked = $true
             
-            invoke-command -scriptblock $p.invoke -ArgumentList $args
+            Invoke-Command -scriptblock $p.invoke -ArgumentList $args
             break;
         }
     }

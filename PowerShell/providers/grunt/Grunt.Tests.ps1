@@ -1,15 +1,13 @@
 ﻿$here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
-
 $provider = . "$here\$sut"
 
-$sampleProject = "$here/../../samples/gulpSample/"
+$sampleProject = "$here/../../../samples/gruntSample/"
 pushd $sampleProject
 npm install | out-null
 popd
 
-Describe "When in a gulp project" {
-
+Describe "When in a grunt project" {
 
     Context "when loading the provider" {
         
@@ -32,11 +30,12 @@ Describe "When in a gulp project" {
 
     }
     
+
     
-    Mock Get-ChildItem { return " $sampleProject/gulpfile.js" }
+    Mock Get-ChildItem {return " $sampleProject/gruntfile.js" }
 
 
-    Context "And gulp is not installed" {
+    Context "And grunt is not installed" {
         Mock Where-Lookup-Command { return $null; }
 
         $hasCommand = & $provider.hasCommand;
@@ -48,19 +47,13 @@ Describe "When in a gulp project" {
     }
 
     
-    Context "gulp IS installed" {
+    Context "grunt IS installed" {
+        Mock Where-Lookup-Command { return "C:\Users\UserA\AppData\Roaming\npm\grunt.cmd"; }
 
-
-        Mock Where-Lookup-Command { return "C:\Users\UserA\AppData\Roaming\npm\gulp.cmd"; }
-
-        $hasGulpCommand = & $provider.hasCommand;
+        $hasCommand = & $provider.hasCommand;
 
         It "Should not exist" {
-            $hasGulpCommand | Should Be $true;
-        }
-
-        It "Should NOT throw an exception because gulpfile should exist." {
-            { & $provider.isProject } | Should Not Throw
+            $hasCommand | Should Be $true;
         }
 
         It "Should be a project." {
@@ -77,20 +70,21 @@ Describe "When in a gulp project" {
 }
 
 
-Describe "When NOT in a gulp project" {
+Describe "When NOT in a grunt project" {
 
-    Mock Get-ChildItem { return $null }
 
-    Context "gulp IS installed" {
-        Mock Where-Lookup-Command { return "C:\Users\UserA\AppData\Roaming\npm\gulp
-C:\Users\UserA\AppData\Roaming\npm\gulp.cmd"; }
+    Mock Get-ChildItem {return $null }
+
+    Context "grunt IS installed" {
+        Mock Where-Lookup-Command { return "C:\Users\UserA\AppData\Roaming\npm\grunt
+C:\Users\UserA\AppData\Roaming\npm\grun.cmd"; }
 
         It "Should not exist" {
-             (& $provider.hasCommand) | Should Be $true;
+             & $provider.hasCommand | Should Be $true;
         }
 
         It "Should report not in a gulp project." {
-            (& $provider.isProject) | Should Be $false
+            & $provider.isProject | Should Be $false
         }
     }
 }

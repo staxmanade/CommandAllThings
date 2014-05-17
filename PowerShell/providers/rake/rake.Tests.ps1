@@ -2,12 +2,11 @@
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
 $provider = . "$here\$sut"
 
-$sampleProject = "$here/../../samples/gruntSample/"
-pushd $sampleProject
-npm install | out-null
-popd
+$sampleProject = "$here/../../../samples/rakeSample/"
 
-Describe "When in a grunt project" {
+Describe "When in a rake project" {
+
+
 
     Context "when loading the provider" {
         
@@ -30,12 +29,11 @@ Describe "When in a grunt project" {
 
     }
     
-
     
-    Mock Get-ChildItem {return " $sampleProject/gruntfile.js" }
+    Mock Get-ChildItem {return " $sampleProject/rakefile" }
 
 
-    Context "And grunt is not installed" {
+    Context "And rake is not installed" {
         Mock Where-Lookup-Command { return $null; }
 
         $hasCommand = & $provider.hasCommand;
@@ -47,13 +45,17 @@ Describe "When in a grunt project" {
     }
 
     
-    Context "grunt IS installed" {
-        Mock Where-Lookup-Command { return "C:\Users\UserA\AppData\Roaming\npm\grunt.cmd"; }
+    Context "rake IS installed" {
+        Mock Where-Lookup-Command { return "C:\Users\UserA\AppData\Roaming\npm\rake.cmd"; }
 
         $hasCommand = & $provider.hasCommand;
 
         It "Should not exist" {
             $hasCommand | Should Be $true;
+        }
+
+        It "Should NOT throw an exception because rakefile should exist." {
+            { & $provider.isProject } | Should Not Throw
         }
 
         It "Should be a project." {
@@ -70,20 +72,20 @@ Describe "When in a grunt project" {
 }
 
 
-Describe "When NOT in a grunt project" {
+Describe "When NOT in a rake project" {
 
 
     Mock Get-ChildItem {return $null }
 
-    Context "grunt IS installed" {
-        Mock Where-Lookup-Command { return "C:\Users\UserA\AppData\Roaming\npm\grunt
-C:\Users\UserA\AppData\Roaming\npm\grun.cmd"; }
+    Context "rake IS installed" {
+        Mock Where-Lookup-Command { return "C:\Ruby193\bin\rake
+C:\Ruby193\bin\rake.bat"; }
 
         It "Should not exist" {
              & $provider.hasCommand | Should Be $true;
         }
 
-        It "Should report not in a gulp project." {
+        It "Should report not in a rake project." {
             & $provider.isProject | Should Be $false
         }
     }

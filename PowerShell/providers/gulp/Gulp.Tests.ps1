@@ -1,11 +1,14 @@
 ﻿$here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
+
 $provider = . "$here\$sut"
 
-$sampleProject = "$here/../../samples/rakeSample/"
+$sampleProject = "$here/../../../samples/gulpSample/"
+pushd $sampleProject
+npm install | out-null
+popd
 
-Describe "When in a rake project" {
-
+Describe "When in a gulp project" {
 
 
     Context "when loading the provider" {
@@ -30,10 +33,10 @@ Describe "When in a rake project" {
     }
     
     
-    Mock Get-ChildItem {return " $sampleProject/rakefile" }
+    Mock Get-ChildItem { return " $sampleProject/gulpfile.js" }
 
 
-    Context "And rake is not installed" {
+    Context "And gulp is not installed" {
         Mock Where-Lookup-Command { return $null; }
 
         $hasCommand = & $provider.hasCommand;
@@ -45,16 +48,18 @@ Describe "When in a rake project" {
     }
 
     
-    Context "rake IS installed" {
-        Mock Where-Lookup-Command { return "C:\Users\UserA\AppData\Roaming\npm\rake.cmd"; }
+    Context "gulp IS installed" {
 
-        $hasCommand = & $provider.hasCommand;
+
+        Mock Where-Lookup-Command { return "C:\Users\UserA\AppData\Roaming\npm\gulp.cmd"; }
+
+        $hasGulpCommand = & $provider.hasCommand;
 
         It "Should not exist" {
-            $hasCommand | Should Be $true;
+            $hasGulpCommand | Should Be $true;
         }
 
-        It "Should NOT throw an exception because rakefile should exist." {
+        It "Should NOT throw an exception because gulpfile should exist." {
             { & $provider.isProject } | Should Not Throw
         }
 
@@ -72,21 +77,20 @@ Describe "When in a rake project" {
 }
 
 
-Describe "When NOT in a rake project" {
+Describe "When NOT in a gulp project" {
 
+    Mock Get-ChildItem { return $null }
 
-    Mock Get-ChildItem {return $null }
-
-    Context "rake IS installed" {
-        Mock Where-Lookup-Command { return "C:\Ruby193\bin\rake
-C:\Ruby193\bin\rake.bat"; }
+    Context "gulp IS installed" {
+        Mock Where-Lookup-Command { return "C:\Users\UserA\AppData\Roaming\npm\gulp
+C:\Users\UserA\AppData\Roaming\npm\gulp.cmd"; }
 
         It "Should not exist" {
-             & $provider.hasCommand | Should Be $true;
+             (& $provider.hasCommand) | Should Be $true;
         }
 
-        It "Should report not in a rake project." {
-            & $provider.isProject | Should Be $false
+        It "Should report not in a gulp project." {
+            (& $provider.isProject) | Should Be $false
         }
     }
 }
