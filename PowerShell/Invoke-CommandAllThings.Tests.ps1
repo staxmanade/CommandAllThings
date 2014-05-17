@@ -44,7 +44,6 @@ Describe "Invoke-CommandAllThings" {
             }
         }
 
-      <#      
         It "Should invoke rake" {
             try {
                 pushd $rakeSampleProject
@@ -54,6 +53,6 @@ Describe "Invoke-CommandAllThings" {
                 popd
             }
         }
-        #>
+
     }
 }

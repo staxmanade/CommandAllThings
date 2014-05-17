@@ -2,7 +2,7 @@
 
 @{
     "invoke"= {
-            $cmd = (Where-Lookup-Command rake | select-string ".cmd$")
+            $cmd = (Where-Lookup-Command rake | select-string ".(bat|cmd)$")
             & $cmd @args
         };
     "isProject" = {

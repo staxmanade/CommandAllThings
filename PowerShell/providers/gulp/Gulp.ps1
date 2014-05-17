@@ -2,7 +2,7 @@
 
 @{
     "invoke"= {
-            $cmd = (Where-Lookup-Command gulp | select-string ".cmd$")
+            $cmd = (Where-Lookup-Command gulp | select-string ".(bat|cmd)$")
             & $cmd @args
         };
     "isProject" = {
