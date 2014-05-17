@@ -1,14 +1,12 @@
 ﻿$here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
-. "$here\$sut"
+
+$provider = . "$here\$sut"
 
 $sampleProject = "$here/../../samples/gulpSample/"
 pushd $sampleProject
 npm install | out-null
 popd
-
-$provider = Create-Provider
-write-host ($provider | gm)
 
 Describe "When in a gulp project" {
 
@@ -20,20 +18,28 @@ Describe "When in a gulp project" {
             $provider | should not be $null
         }
 
-        It "Should have loaded" {
+        It "Should have invoke script block" {
             $provider.invoke | should not be $null
         }
 
-    }
+        It "Should have hasCommand script block" {
+            $provider.hasCommand | should not be $null
+        }
 
+        It "Should have isProject script block" {
+            $provider.isProject | should not be $null
+        }
+
+    }
     
-    Mock Get-ChildItem {return " $sampleProject/gulpfile.js" }
+    
+    Mock Get-ChildItem { return " $sampleProject/gulpfile.js" }
 
 
     Context "And gulp is not installed" {
         Mock Where-Lookup-Command { return $null; }
 
-        $hasCommand = $provider.hasCommand();
+        $hasCommand = & $provider.hasCommand;
 
         It "Should not exist" {
             $hasCommand | Should Be $false;
@@ -43,16 +49,18 @@ Describe "When in a gulp project" {
 
     
     Context "gulp IS installed" {
+
+
         Mock Where-Lookup-Command { return "C:\Users\UserA\AppData\Roaming\npm\gulp.cmd"; }
 
-        $hasGulpCommand = $provider.hasCommand();
+        $hasGulpCommand = & $provider.hasCommand;
 
         It "Should not exist" {
             $hasGulpCommand | Should Be $true;
         }
 
         It "Should NOT throw an exception because gulpfile should exist." {
-            { $provider.isProject() } | Should Not Throw
+            { & $provider.isProject } | Should Not Throw
         }
 
         It "Should be a project." {
@@ -60,44 +68,29 @@ Describe "When in a gulp project" {
             try {
                 pushd $sampleProject
 
-                $provider.isProject() | Should Be $true
+                & $provider.isProject | Should Be $true
             } finally{
                 popd
             }
         }
-
-        It "Should invoke gulp test" {
-            
-            try {
-                pushd $sampleProject
-
-
-                $result = $provider.invoke();
-                [string]::Join([System.Environment]::NewLine,$result) | should Match "Hello Gulp"
-            } finally{
-                popd
-            }
-        }
-
     }
 }
 
 
 Describe "When NOT in a gulp project" {
 
-
-    Mock Get-ChildItem {return $null }
+    Mock Get-ChildItem { return $null }
 
     Context "gulp IS installed" {
         Mock Where-Lookup-Command { return "C:\Users\UserA\AppData\Roaming\npm\gulp
 C:\Users\UserA\AppData\Roaming\npm\gulp.cmd"; }
 
         It "Should not exist" {
-             $provider.hasCommand() | Should Be $true;
+             (& $provider.hasCommand) | Should Be $true;
         }
 
         It "Should report not in a gulp project." {
-            $provider.isProject() | Should Be $false
+            (& $provider.isProject) | Should Be $false
         }
     }
 }

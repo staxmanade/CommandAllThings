@@ -1,17 +1,13 @@
 ﻿$here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
-. "$here\$sut"
+$provider = . "$here\$sut"
 
 $sampleProject = "$here/../../samples/gruntSample/"
 pushd $sampleProject
 npm install | out-null
 popd
 
-$provider = Create-Provider
-write-host ($provider | gm)
-
 Describe "When in a grunt project" {
-
 
     Context "when loading the provider" {
         
@@ -20,11 +16,20 @@ Describe "When in a grunt project" {
             $provider | should not be $null
         }
 
-        It "Should have loaded" {
+        It "Should have invoke script block" {
             $provider.invoke | should not be $null
         }
 
+        It "Should have hasCommand script block" {
+            $provider.hasCommand | should not be $null
+        }
+
+        It "Should have isProject script block" {
+            $provider.isProject | should not be $null
+        }
+
     }
+    
 
     
     Mock Get-ChildItem {return " $sampleProject/gruntfile.js" }
@@ -33,7 +38,7 @@ Describe "When in a grunt project" {
     Context "And grunt is not installed" {
         Mock Where-Lookup-Command { return $null; }
 
-        $hasCommand = $provider.hasCommand();
+        $hasCommand = & $provider.hasCommand;
 
         It "Should not exist" {
             $hasCommand | Should Be $false;
@@ -45,7 +50,7 @@ Describe "When in a grunt project" {
     Context "grunt IS installed" {
         Mock Where-Lookup-Command { return "C:\Users\UserA\AppData\Roaming\npm\grunt.cmd"; }
 
-        $hasCommand = $provider.hasCommand();
+        $hasCommand = & $provider.hasCommand;
 
         It "Should not exist" {
             $hasCommand | Should Be $true;
@@ -56,25 +61,11 @@ Describe "When in a grunt project" {
             try {
                 pushd $sampleProject
 
-                $provider.isProject() | Should Be $true
+                & $provider.isProject | Should Be $true
             } finally{
                 popd
             }
         }
-
-        It "Should invoke grunt test" {
-            
-            try {
-                pushd $sampleProject
-
-
-                $result = $provider.invoke();
-                [string]::Join([System.Environment]::NewLine,$result) | should Match "Hello Grunt"
-            } finally{
-                popd
-            }
-        }
-
     }
 }
 
@@ -89,11 +80,11 @@ Describe "When NOT in a grunt project" {
 C:\Users\UserA\AppData\Roaming\npm\grun.cmd"; }
 
         It "Should not exist" {
-             $provider.hasCommand() | Should Be $true;
+             & $provider.hasCommand | Should Be $true;
         }
 
         It "Should report not in a gulp project." {
-            $provider.isProject() | Should Be $false
+            & $provider.isProject | Should Be $false
         }
     }
 }

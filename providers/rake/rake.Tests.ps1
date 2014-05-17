@@ -1,13 +1,11 @@
 ﻿$here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
-. "$here\$sut"
+$provider = . "$here\$sut"
 
 $sampleProject = "$here/../../samples/rakeSample/"
 
-$provider = Create-Provider
-write-host ($provider | gm)
-
 Describe "When in a rake project" {
+
 
 
     Context "when loading the provider" {
@@ -17,12 +15,20 @@ Describe "When in a rake project" {
             $provider | should not be $null
         }
 
-        It "Should have loaded" {
+        It "Should have invoke script block" {
             $provider.invoke | should not be $null
         }
 
-    }
+        It "Should have hasCommand script block" {
+            $provider.hasCommand | should not be $null
+        }
 
+        It "Should have isProject script block" {
+            $provider.isProject | should not be $null
+        }
+
+    }
+    
     
     Mock Get-ChildItem {return " $sampleProject/rakefile" }
 
@@ -30,7 +36,7 @@ Describe "When in a rake project" {
     Context "And rake is not installed" {
         Mock Where-Lookup-Command { return $null; }
 
-        $hasCommand = $provider.hasCommand();
+        $hasCommand = & $provider.hasCommand;
 
         It "Should not exist" {
             $hasCommand | Should Be $false;
@@ -42,14 +48,14 @@ Describe "When in a rake project" {
     Context "rake IS installed" {
         Mock Where-Lookup-Command { return "C:\Users\UserA\AppData\Roaming\npm\rake.cmd"; }
 
-        $hasCommand = $provider.hasCommand();
+        $hasCommand = & $provider.hasCommand;
 
         It "Should not exist" {
             $hasCommand | Should Be $true;
         }
 
         It "Should NOT throw an exception because rakefile should exist." {
-            { $provider.isProject() } | Should Not Throw
+            { & $provider.isProject } | Should Not Throw
         }
 
         It "Should be a project." {
@@ -57,25 +63,11 @@ Describe "When in a rake project" {
             try {
                 pushd $sampleProject
 
-                $provider.isProject() | Should Be $true
+                & $provider.isProject | Should Be $true
             } finally{
                 popd
             }
         }
-
-        It "Should invoke rake test" {
-            
-            try {
-                pushd $sampleProject
-
-
-                $result = $provider.invoke();
-                [string]::Join([System.Environment]::NewLine,$result) | should Match "Hello rake"
-            } finally{
-                popd
-            }
-        }
-
     }
 }
 
@@ -90,11 +82,11 @@ Describe "When NOT in a rake project" {
 C:\Ruby193\bin\rake.bat"; }
 
         It "Should not exist" {
-             $provider.hasCommand() | Should Be $true;
+             & $provider.hasCommand | Should Be $true;
         }
 
         It "Should report not in a rake project." {
-            $provider.isProject() | Should Be $false
+            & $provider.isProject | Should Be $false
         }
     }
 }

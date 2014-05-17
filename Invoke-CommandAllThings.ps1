@@ -1,14 +1,17 @@
 ﻿$here = Split-Path -Parent $MyInvocation.MyCommand.Path
 
+function Where-Lookup-Command(){ where.exe $args }
+
 
 function Get-CommandAllThingsProviders {
 
     $result = @{}
 
     $providers = ls -recurse "$here\providers" -Exclude "*.Tests.ps1" | where { !$_.PSIsContainer }
-    
+    write-host $providers
     $providers | %{
         $name = [System.IO.Path]::GetFileNameWithoutExtension($_);
+        write-host $name
         $result[$name] = (& $_);
     }
     $result
@@ -27,9 +30,10 @@ function Invoke-CommandAllThings {
 
     foreach($key in $providers.Keys) {
         $p = $providers[$key];
-        if($p.isProject()) {
+        if( & $p.isProject ) {
             $wasInvoked = $true
-            $p.invoke($args)
+            
+            invoke-command -scriptblock $p.invoke -ArgumentList $args
             break;
         }
     }
