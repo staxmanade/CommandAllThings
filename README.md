@@ -15,4 +15,4 @@ If you have this setup, it will re-route the `gulp test` command over and execut
 
 ### Get it for: [PowerShell](PowerShell/)
 
-### Get it for: bash (todo)
+### Get it for: [bash](bash/)
