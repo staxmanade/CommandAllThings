@@ -1,7 +1,7 @@
 CommandAllThings
 ================
 
-Wrapper around task runners like ([gulp](http://gulpjs.com/)/[grunt](gruntjs.com)/[rake](http://rake.rubyforge.org/)/etc...) allowing you to accidentally type the wrong starting command and still accomplish the actual task.
+Wrapper around task runners like ([gulp](http://gulpjs.com/)/[grunt](http://gruntjs.com)/[rake](http://rake.rubyforge.org/)/etc...) allowing you to accidentally type the wrong starting command and still accomplish the actual task.
 
 ### Say what?
 
