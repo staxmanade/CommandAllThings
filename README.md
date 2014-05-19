@@ -16,3 +16,22 @@ If you have this setup, it will re-route the `gulp test` command over and execut
 ### Get it for: [PowerShell](PowerShell/)
 
 ### Get it for: [Bash](bash/)
+
+
+###
+
+### Supports
+
+- [x] [gulpjs](http://gulpjs.com)
+- [x] [gruntjs](http://gruntjs.com)
+- [x] [jake](https://github.com/mde/jake)
+- [x] [make](http://en.wikipedia.org/wiki/Make_(software))
+- [x] [rake](http://rake.rubyforge.org/)
+
+### TODO:
+- [ ] [Ant](http://ant.apache.org/)
+- [ ] [Brunch](http://brunch.io/)
+- [ ] [Cake](cake-build.sourceforge.net)
+- [ ] [Fabric](http://www.fabfile.org/)
+- [ ] [Gradle](http://www.gradle.org/)
+- [ ] [Maven](http://maven.apache.org/)
