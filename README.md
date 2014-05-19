@@ -33,3 +33,4 @@ If you have this setup, it will re-route the `gulp test` command over and execut
 - [ ] [Gradle](http://www.gradle.org/)
 - [ ] [Maven](http://maven.apache.org/)
 - [ ] [PSake](https://github.com/psake/psake)
+- [ ] [Suggest another here...](https://github.com/staxmanade/CommandAllThings/issues/3)
