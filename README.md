@@ -28,7 +28,7 @@ If you have this setup, it will re-route the `gulp test` command over and execut
 ### TODO:
 - [ ] [Ant](http://ant.apache.org/)
 - [ ] [Brunch](http://brunch.io/)
-- [ ] [Cake](cake-build.sourceforge.net)
+- [ ] [Cake](http://sourceforge.net/apps/trac/cake-build)
 - [ ] [Fabric](http://www.fabfile.org/)
 - [ ] [Gradle](http://www.gradle.org/)
 - [ ] [Maven](http://maven.apache.org/)
