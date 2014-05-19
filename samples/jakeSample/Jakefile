@@ -1,0 +1,4 @@
+desc('Hello world task.');
+task('test', [], function () {
+    console.log("Hello jake!");
+});

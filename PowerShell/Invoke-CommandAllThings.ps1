@@ -37,7 +37,7 @@ function Invoke-CommandAllThings {
     }
 
     if(!$wasInvoked) {
-        throw "Cannot run this command via CommandAllThings as local provider was not found. Are you sure you're in a directory that can execute tasks?"
+        throw "CommandAllThings: Could not find a known task file (ex: gruntfile.js, gulpfile.js, jakefile, makefile, or rakefile)"
     }
 
 }

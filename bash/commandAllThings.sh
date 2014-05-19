@@ -6,12 +6,14 @@ if [ -e "gulpfile.js" ]; then
 	command=gulp
 elif [ -e "gruntfile.js" ]; then
 	command=grunt
+elif [ -e "jakefile" ]; then
+	command=jake
 elif [ -e "makefile" ]; then
 	command=make
 elif [ -e "rakefile" ]; then
 	command=rake
 else
-	echo 'could not find a known task file (ex: gulpfile.js, gruntfile.js, rakefile)'
+	echo 'CommandAllThings: could not find a known task file (ex: gruntfile.js, gulpfile.js, jakefile, makefile, or rakefile)'
 fi
 
 if [ -n "$command" ]; then
