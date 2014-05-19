@@ -8,12 +8,15 @@ Check out the parent [../README](../README.md)
 
 ### Setup
 
-(TODO) - still working on this step. If you're interested take a look at the [sampleProfile.ps1](sampleProfile.ps1)
+(TODO) - still working on this step.
+
+For now you can copy this folder locally and look at the [sampleProfile.ps1](sampleProfile.ps1) to get started.
 
 ### Supports
 
 - [gulpjs](http://gulpjs.com)
 - [gruntjs](http://gruntjs.com)
+- [jake](https://github.com/mde/jake)
 - [rake](http://rake.rubyforge.org/)
 
 
