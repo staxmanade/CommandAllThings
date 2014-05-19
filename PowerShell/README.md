@@ -14,10 +14,10 @@ For now you can copy this folder locally and look at the [sampleProfile.ps1](sam
 
 ### Supports
 
-- [gulpjs](http://gulpjs.com)
-- [gruntjs](http://gruntjs.com)
-- [jake](https://github.com/mde/jake)
-- [rake](http://rake.rubyforge.org/)
+- [x] [gulpjs](http://gulpjs.com)
+- [x] [gruntjs](http://gruntjs.com)
+- [x] [jake](https://github.com/mde/jake)
+- [x] [rake](http://rake.rubyforge.org/)
 
 
 ### But it doesn't have my tool?
