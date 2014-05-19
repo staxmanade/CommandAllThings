@@ -1,8 +1,6 @@
 CommandAllThings - Contribution guide
 ================
 
-But you can use [Pester](https://github.com/pester/Pester) and `Invoke-Pester` to run the tests...
-
 # How to add a new tool
 
 1. Create a sample test project in the [samples](samples/) folder (for testing)
@@ -14,3 +12,7 @@ But you can use [Pester](https://github.com/pester/Pester) and `Invoke-Pester` t
   - Update the [Bash script](bash/commandAllThings.sh) to support the new tool.
   - Update the error text in [Bash](bash/commandAllThings.sh)
   - Update [Readme](bash/README.md)
+
+# Run tests with PowerShell
+
+But you can use [Pester](https://github.com/pester/Pester) and `Invoke-Pester` to run the tests...
