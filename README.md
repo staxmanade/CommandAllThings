@@ -17,9 +17,6 @@ If you have this setup, it will re-route the `gulp test` command over and execut
 
 ### Get it for: [Bash](bash/)
 
-
-###
-
 ### Supports
 
 - [x] [gulpjs](http://gulpjs.com)
