@@ -12,13 +12,6 @@ Check out the parent [../README](../README.md)
 
 For now you can copy this folder locally and look at the [sampleProfile.ps1](sampleProfile.ps1) to get started.
 
-### Supports
-
-- [x] [gulpjs](http://gulpjs.com)
-- [x] [gruntjs](http://gruntjs.com)
-- [x] [jake](https://github.com/mde/jake)
-- [x] [rake](http://rake.rubyforge.org/)
-
 
 ### But it doesn't have my tool?
 
