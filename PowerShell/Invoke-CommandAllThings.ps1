@@ -1,5 +1,8 @@
 ﻿$here = Split-Path -Parent $MyInvocation.MyCommand.Path
 
+function Where-Lookup-Command(){ where.exe $args }
+
+
 function Get-CommandAllThingsProviders {
 
     $result = @{}
