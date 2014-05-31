@@ -19,18 +19,19 @@ If you have this setup, it will re-route the `gulp test` command over and execut
 
 ### Supports
 
-- [x] [gulpjs](http://gulpjs.com)
-- [x] [gruntjs](http://gruntjs.com)
-- [x] [jake](https://github.com/mde/jake)
-- [x] [make](http://en.wikipedia.org/wiki/Make_(software))
-- [x] [rake](http://rake.rubyforge.org/)
-
-### TODO:
-- [ ] [Ant](http://ant.apache.org/)
-- [ ] [Brunch](http://brunch.io/)
-- [ ] [Cake](http://sourceforge.net/apps/trac/cake-build)
-- [ ] [Fabric](http://www.fabfile.org/)
-- [ ] [Gradle](http://www.gradle.org/)
-- [ ] [Maven](http://maven.apache.org/)
-- [ ] [PSake](https://github.com/psake/psake)
-- [ ] [Suggest another here...](https://github.com/staxmanade/CommandAllThings/issues/3)
+| Program        | Windows           | Mac/Linux  |
+| ------------- |:-------------:| -----:|
+| [Ant](http://ant.apache.org/) | TODO | TODO |
+| [Brunch](http://brunch.io/) | TODO | TODO |
+| [Cake](http://sourceforge.net/apps/trac/cake-build) | TODO | TODO |
+| [Fabric](http://www.fabfile.org/) | TODO | TODO |
+| [Gradle](http://www.gradle.org/) | TODO | TODO |
+| [gruntjs](http://gruntjs.com) | &#10003; | &#10003; |
+| [gulpjs](http://gulpjs.com) | &#10003; | &#10003; |
+| [Invoke-Build](https://github.com/nightroman/Invoke-Build) | TODO | TODO |
+| [jake](https://github.com/mde/jake) | &#10003; | &#10003; |
+| [make](http://en.wikipedia.org/wiki/Make_(software)) | TODO? | &#10003; |
+| [Maven](http://maven.apache.org/) | TODO | TODO |
+| [rake](http://rake.rubyforge.org/) | &#10003; | &#10003; |
+| [PSake](https://github.com/psake/psake) | TODO | TODO |
+| [Suggest another here...](https://github.com/staxmanade/CommandAllThings/issues/3) | TODO | TODO |
