@@ -7,11 +7,11 @@ CommandAllThings - Contribution guide
 2. PowerShell 
   - Create a windows PowerShell provider (including tests). (look at other examples in the [providers](PowerShell/providers/) folder)
   - Update the error text in [PowerShell](PowerShell/Invoke-CommandAllThings.ps1) to include the new file searched for
-  - Update [Readme](PowerShell/README.md)
+  - Update support table in the [Readme](README.md)
 3. Bash
   - Update the [Bash script](bash/commandAllThings.sh) to support the new tool.
   - Update the error text in [Bash](bash/commandAllThings.sh)
-  - Update [Readme](bash/README.md)
+  - Update support table in the [Readme](README.md)
 
 # Run tests with PowerShell
 
