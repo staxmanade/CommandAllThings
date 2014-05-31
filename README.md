@@ -26,12 +26,12 @@ If you have this setup, it will re-route the `gulp test` command over and execut
 | [Cake](http://sourceforge.net/apps/trac/cake-build) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/8) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/8) |
 | [Fabric](http://www.fabfile.org/) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/9) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/9) |
 | [Gradle](http://www.gradle.org/) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/10) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/10) |
-| [gruntjs](http://gruntjs.com) | &#10003; | &#10003; |
-| [gulpjs](http://gulpjs.com) | &#10003; | &#10003; |
+| [GruntJS](http://gruntjs.com) | &#10003; | &#10003; |
+| [GulpJS](http://gulpjs.com) | &#10003; | &#10003; |
 | [Invoke-Build](https://github.com/nightroman/Invoke-Build) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/5) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/5) |
-| [jake](https://github.com/mde/jake) | &#10003; | &#10003; |
-| [make](http://en.wikipedia.org/wiki/Make_(software)) | TODO? | &#10003; |
+| [Gake](https://github.com/mde/jake) | &#10003; | &#10003; |
+| [Gake](http://en.wikipedia.org/wiki/Make_(software)) | TODO? | &#10003; |
 | [Maven](http://maven.apache.org/) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/11) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/11) |
-| [rake](http://rake.rubyforge.org/) | &#10003; | &#10003; |
+| [Gake](http://rake.rubyforge.org/) | &#10003; | &#10003; |
 | [PSake](https://github.com/psake/psake) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/12) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/12) |
 | [Suggest another here...](https://github.com/staxmanade/CommandAllThings/issues/new) | - | - |
