@@ -30,8 +30,8 @@ If you have this setup, it will re-route the `gulp test` command over and execut
 | [GulpJS](http://gulpjs.com) | &#10003; | &#10003; |
 | [Invoke-Build](https://github.com/nightroman/Invoke-Build) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/5) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/5) |
 | [Gake](https://github.com/mde/jake) | &#10003; | &#10003; |
-| [Gake](http://en.wikipedia.org/wiki/Make_(software)) | TODO? | &#10003; |
+| [Make](http://en.wikipedia.org/wiki/Make_(software)) | TODO? | &#10003; |
 | [Maven](http://maven.apache.org/) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/11) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/11) |
-| [Gake](http://rake.rubyforge.org/) | &#10003; | &#10003; |
+| [Rake](http://rake.rubyforge.org/) | &#10003; | &#10003; |
 | [PSake](https://github.com/psake/psake) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/12) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/12) |
 | [Suggest another here...](https://github.com/staxmanade/CommandAllThings/issues/new) | - | - |
