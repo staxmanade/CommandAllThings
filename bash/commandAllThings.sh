@@ -12,6 +12,8 @@ elif [ -e "makefile" ]; then
 	command=make
 elif [ -e "rakefile" ]; then
 	command=rake
+elif [ -e "build.gradle" ]; then
+	command=gradle
 else
 	echo 'CommandAllThings: could not find a known task file (ex: gruntfile.js, gulpfile.js, jakefile, makefile, or rakefile)'
 fi
