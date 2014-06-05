@@ -3,3 +3,11 @@ task :default => [:test]
 task :test do
   puts "Hello rake"
 end
+
+task :taskWithOneParam do
+   arg1  = ARGV[1]
+
+   puts "Hello rake: arg1=[#{arg1}]"
+
+   exit
+end

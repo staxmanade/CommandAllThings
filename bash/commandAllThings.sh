@@ -21,6 +21,6 @@ if [ -n "$command" ]; then
 	if [ $# -eq 0 ]; then
 	  $fullCommand
     else
-	  $fullCommand "$*"
+	  $fullCommand "$@"
     fi
 fi
