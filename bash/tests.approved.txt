@@ -1,0 +1,162 @@
+***     Dir: /Users/jasonjarrett/code/personal/CommandAllThings/samples/gruntSample
+*** TESTING: *** grunt ***
+***     PWD: /Users/jasonjarrett/code/personal/CommandAllThings/samples/gruntSample
+npm WARN package.json gruntSample@0.0.0 No description
+npm WARN package.json gruntSample@0.0.0 No repository field.
+npm WARN package.json gruntSample@0.0.0 No README data
+*** Running: grunt
+[4mRunning "log:bar" (log) task[24m
+Hello Grunt
+
+[32mDone, without errors.[39m
+npm WARN package.json gruntSample@0.0.0 No description
+npm WARN package.json gruntSample@0.0.0 No repository field.
+npm WARN package.json gruntSample@0.0.0 No README data
+*** Running: gulp
+[4mRunning "log:bar" (log) task[24m
+Hello Grunt
+
+[32mDone, without errors.[39m
+npm WARN package.json gruntSample@0.0.0 No description
+npm WARN package.json gruntSample@0.0.0 No repository field.
+npm WARN package.json gruntSample@0.0.0 No README data
+*** Running: jake
+[4mRunning "log:bar" (log) task[24m
+Hello Grunt
+
+[32mDone, without errors.[39m
+npm WARN package.json gruntSample@0.0.0 No description
+npm WARN package.json gruntSample@0.0.0 No repository field.
+npm WARN package.json gruntSample@0.0.0 No README data
+*** Running: rake
+[4mRunning "log:bar" (log) task[24m
+Hello Grunt
+
+[32mDone, without errors.[39m
+npm WARN package.json gruntSample@0.0.0 No description
+npm WARN package.json gruntSample@0.0.0 No repository field.
+npm WARN package.json gruntSample@0.0.0 No README data
+*** Running: gradle
+[4mRunning "log:bar" (log) task[24m
+Hello Grunt
+
+[32mDone, without errors.[39m
+npm WARN package.json gruntSample@0.0.0 No description
+npm WARN package.json gruntSample@0.0.0 No repository field.
+npm WARN package.json gruntSample@0.0.0 No README data
+*** Running: make
+[4mRunning "log:bar" (log) task[24m
+Hello Grunt
+
+[32mDone, without errors.[39m
+***     Dir: /Users/jasonjarrett/code/personal/CommandAllThings/samples/gulpSample
+*** TESTING: *** gulp ***
+***     PWD: /Users/jasonjarrett/code/personal/CommandAllThings/samples/gulpSample
+npm WARN package.json gulpSample@0.0.0 No description
+npm WARN package.json gulpSample@0.0.0 No repository field.
+npm WARN package.json gulpSample@0.0.0 No README data
+*** Running: grunt
+[gulp] Using gulpfile ~/code/personal/CommandAllThings/samples/gulpSample/gulpfile.js
+[gulp] Starting 'test'...
+Hello Gulp
+[gulp] Finished 'test' after ##.# μs
+[gulp] Starting 'default'...
+[gulp] Finished 'default' after ##.# μs
+npm WARN package.json gulpSample@0.0.0 No description
+npm WARN package.json gulpSample@0.0.0 No repository field.
+npm WARN package.json gulpSample@0.0.0 No README data
+*** Running: gulp
+[gulp] Using gulpfile ~/code/personal/CommandAllThings/samples/gulpSample/gulpfile.js
+[gulp] Starting 'test'...
+Hello Gulp
+[gulp] Finished 'test' after ##.# μs
+[gulp] Starting 'default'...
+[gulp] Finished 'default' after ##.# μs
+npm WARN package.json gulpSample@0.0.0 No description
+npm WARN package.json gulpSample@0.0.0 No repository field.
+npm WARN package.json gulpSample@0.0.0 No README data
+*** Running: jake
+[gulp] Using gulpfile ~/code/personal/CommandAllThings/samples/gulpSample/gulpfile.js
+[gulp] Starting 'test'...
+Hello Gulp
+[gulp] Finished 'test' after ##.# μs
+[gulp] Starting 'default'...
+[gulp] Finished 'default' after ##.# μs
+npm WARN package.json gulpSample@0.0.0 No description
+npm WARN package.json gulpSample@0.0.0 No repository field.
+npm WARN package.json gulpSample@0.0.0 No README data
+*** Running: rake
+[gulp] Using gulpfile ~/code/personal/CommandAllThings/samples/gulpSample/gulpfile.js
+[gulp] Starting 'test'...
+Hello Gulp
+[gulp] Finished 'test' after ##.# μs
+[gulp] Starting 'default'...
+[gulp] Finished 'default' after ##.# μs
+npm WARN package.json gulpSample@0.0.0 No description
+npm WARN package.json gulpSample@0.0.0 No repository field.
+npm WARN package.json gulpSample@0.0.0 No README data
+*** Running: gradle
+[gulp] Using gulpfile ~/code/personal/CommandAllThings/samples/gulpSample/gulpfile.js
+[gulp] Starting 'test'...
+Hello Gulp
+[gulp] Finished 'test' after ##.# μs
+[gulp] Starting 'default'...
+[gulp] Finished 'default' after ##.# μs
+npm WARN package.json gulpSample@0.0.0 No description
+npm WARN package.json gulpSample@0.0.0 No repository field.
+npm WARN package.json gulpSample@0.0.0 No README data
+*** Running: make
+[gulp] Using gulpfile ~/code/personal/CommandAllThings/samples/gulpSample/gulpfile.js
+[gulp] Starting 'test'...
+Hello Gulp
+[gulp] Finished 'test' after ##.# μs
+[gulp] Starting 'default'...
+[gulp] Finished 'default' after ##.# μs
+***     Dir: /Users/jasonjarrett/code/personal/CommandAllThings/samples/jakeSample
+*** TESTING: *** jake ***
+***     PWD: /Users/jasonjarrett/code/personal/CommandAllThings/samples/jakeSample
+*** Running: grunt
+*** Running: gulp
+*** Running: jake
+*** Running: rake
+*** Running: gradle
+*** Running: make
+***     Dir: /Users/jasonjarrett/code/personal/CommandAllThings/samples/rakeSample
+*** TESTING: *** rake ***
+***     PWD: /Users/jasonjarrett/code/personal/CommandAllThings/samples/rakeSample
+*** Running: grunt
+Hello rake
+*** Running: gulp
+Hello rake
+*** Running: jake
+Hello rake
+*** Running: rake
+Hello rake
+*** Running: gradle
+Hello rake
+*** Running: make
+Hello rake
+***     Dir: /Users/jasonjarrett/code/personal/CommandAllThings/samples/gradleSample
+*** TESTING: *** gradle ***
+***     PWD: /Users/jasonjarrett/code/personal/CommandAllThings/samples/gradleSample
+*** Running: grunt
+*** Running: gulp
+*** Running: jake
+*** Running: rake
+*** Running: gradle
+*** Running: make
+***     Dir: /Users/jasonjarrett/code/personal/CommandAllThings/samples/makeSample
+*** TESTING: *** make ***
+***     PWD: /Users/jasonjarrett/code/personal/CommandAllThings/samples/makeSample
+*** Running: grunt
+hello make
+*** Running: gulp
+hello make
+*** Running: jake
+hello make
+*** Running: rake
+hello make
+*** Running: gradle
+hello make
+*** Running: make
+hello make
