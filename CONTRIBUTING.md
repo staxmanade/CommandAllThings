@@ -16,8 +16,20 @@ CommandAllThings - Contribution guide
 
 # Run tests 
 
-On Windows you can run the tests with [Pester](https://github.com/pester/Pester) and `Invoke-Pester` to run the tests.
+## Windows
 
-On the Mac you can `npm install -g approvals` and execute the `./bash/tests.approvals.sh` file.
+We leverage a PowerShell BDD testing framework called [Pester](https://github.com/pester/Pester). Once installed and module loaded you can `Invoke-Pester` to run the tests.
+
+## Mac/Linux
+
+On the Mac I have a strange testing strategy of running a bunch of task commands in the terminal, capturing standard out and using [approvals](https://github.com/approvals/approvals.nodejs) to diff the output with the expected output.
+
+To run the tests you first must install the approvals command line utility using npm (which comes with [nodejs](http://nodejs.org/).
+
+`npm install -g approvals`
+
+Then you can run this script
+
+`./bash/tests.approvals.sh`
 
 
