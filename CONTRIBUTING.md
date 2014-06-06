@@ -3,7 +3,7 @@ CommandAllThings - Contribution guide
 
 # How to add a new tool
 
-1. Create a sample test project in the [samples](samples/) folder (for testing). You can look at the existing sample projects. Typically create a `test` task that prints `hello {program}` to stdout
+1. Create a sample test project in the [samples](samples/) folder (for testing). You can look at the existing sample projects. Typically create a `test` task that prints `hello {program}` to stdout.
 2. PowerShell 
   - Create a windows PowerShell provider (including tests). (look at other examples in the [providers](PowerShell/providers/) folder)
   - Update the error text in [PowerShell](PowerShell/Invoke-CommandAllThings.ps1) to include the new project/file searched for
