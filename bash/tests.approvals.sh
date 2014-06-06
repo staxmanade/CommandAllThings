@@ -6,4 +6,4 @@ OUTPUT=$($DIR/tests.sh 2>&1 | sed -e 's/after.*μs/after ##.# μs/g')
 
 # remove the gulp timestamps
 
-echo "$OUTPUT"  | approvals tests
+echo "$OUTPUT"  | approvals tests --outdir $DIR
