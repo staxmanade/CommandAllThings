@@ -38,3 +38,7 @@ If you have this setup, it will re-route the `gulp test` command over and execut
 | [Xbuild](http://www.gradle.org/) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/15) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/15) |
 | &nbsp; |  |  |
 | [Suggest another here...](https://github.com/staxmanade/CommandAllThings/issues/new) |  |  |
+
+### Contributing
+
+Would love input and other sets of eyes with ideas on how to improve the tool/scripts. If you add a new tool, checkout the [Contributing.md](Contributing.md) for a set of TODO's/how to run tests.
