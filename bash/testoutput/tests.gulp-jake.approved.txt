@@ -1,4 +1,4 @@
-[gulp] Using gulpfile ~/code/personal/CommandAllThings/samples/gulpSample/gulpfile.js
+[gulp] Using gulpfile REMOVED
 [gulp] Starting 'test'...
 Hello Gulp
 [gulp] Finished 'test' after ##.# μs

@@ -35,7 +35,7 @@ do
 			fi
 			echo "*** Executing: $i - $j"
 			# execute the tests ( and also redirect stderr to stdout ) capturing output
-			OUTPUT=$( eval $j | sed -e 's/after.*μs/after ##.# μs/g')
+			OUTPUT=$( eval $j | sed -e 's/after.*μs/after ##.# μs/g' -e "s/Using gulpfile .*/Using gulpfile REMOVED/g")
 
 			echo "$OUTPUT"  | approvals "tests.$i-$j" --reporter gitdiff --outdir $DIR/testoutput "$@"
 			localExit=$?
