@@ -1,0 +1,6 @@
+[gulp] Using gulpfile ~/code/personal/CommandAllThings/samples/gulpSample/gulpfile.js
+[gulp] Starting 'test'...
+Hello Gulp
+[gulp] Finished 'test' after ##.# μs
+[gulp] Starting 'default'...
+[gulp] Finished 'default' after ##.# μs

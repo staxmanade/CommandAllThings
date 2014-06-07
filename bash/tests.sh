@@ -5,27 +5,39 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 . $DIR/sampleProfile.sh
 
 commands=( grunt gulp jake rake gradle make )
+installedCommands=()
 
 for i in "${commands[@]}"
 do
-
-	testDir=$(cd "$DIR/../samples/${i}Sample"; pwd)
+	fullCommand=$(which $i | grep -v commandAllThings | head -n 1)
 
 	echo "*********************************"
-	echo "*** $i"
-	echo "*** Expected Testing Dir: $testDir"
 
-	cd $testDir
+	if [ -z "$fullCommand" ]; then
+		echo "COMMAND: $i NOT installed. Skipping tests..."
+	else
 
-	echo "*** Current Directory : $(pwd)"
-	
+		testDir=$(cd "$DIR/../samples/${i}Sample"; pwd)
+
+		echo "*** $i"
+		echo "*** Expected Testing Dir: $testDir"
+
+		cd $testDir
+
+		echo "*** Current Directory : $(pwd)"
+
     for j in "${commands[@]}"
     do
-		if [ -e "package.json" ]; then
-            npm install > /dev/null
-		fi
-		echo "*** Executing: $j"
-	    eval $j
+			if [ -e "package.json" ]; then
+	            npm install > /dev/null
+			fi
+			echo "*** Executing: $i - $j"
+			# execute the tests ( and also redirect stderr to stdout ) capturing output
+			OUTPUT=$( eval $j | sed -e 's/after.*μs/after ##.# μs/g')
+			echo "$OUTPUT"  | approvals "tests.$i-$j" --outdir $DIR/testoutput "$@"
     done
-done
 
+	fi
+
+
+done

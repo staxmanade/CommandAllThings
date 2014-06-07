@@ -1,11 +1,12 @@
 {
   "name": "gulpSample",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "test project",
   "main": "index.js",
   "scripts": {
     "test": "gulp test"
   },
+  "private": true,
   "author": "",
   "license": "ISC",
   "devDependencies": {

@@ -1,0 +1,4 @@
+[4mRunning "log:bar" (log) task[24m
+Hello Grunt
+
+[32mDone, without errors.[39m
