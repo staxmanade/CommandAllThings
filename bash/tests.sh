@@ -7,7 +7,7 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 commands=( grunt gulp jake rake gradle make )
 installedCommands=()
 
-exitCode = 0
+exitCode=0
 
 for i in "${commands[@]}"
 do
@@ -36,11 +36,14 @@ do
 			echo "*** Executing: $i - $j"
 			# execute the tests ( and also redirect stderr to stdout ) capturing output
 			OUTPUT=$( eval $j | sed -e 's/after.*μs/after ##.# μs/g')
+
 			echo "$OUTPUT"  | approvals "tests.$i-$j" --outdir $DIR/testoutput "$@"
-			echo "OUTPUT EXIT WITH: $?"
-			if [ $? -gt 0 ]; then
+			localExit=$?
+			if [ $localExit -gt 0 ]; then
+				echo "SETTING FAILURE EXIT!"
 				exitCode=1
 			fi
+			echo "OUTPUT EXIT WITH: $localExit"
     done
 
 	fi
@@ -48,5 +51,5 @@ do
 
 done
 
-echo "Existing with code: $exitCode"
+echo "Exiting with code: $exitCode"
 exit $exitCode
