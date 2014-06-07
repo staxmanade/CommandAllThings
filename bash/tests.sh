@@ -2,7 +2,14 @@
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 # include the sample aliases
-. $DIR/sampleProfile.sh
+#. $DIR/sampleProfile.sh
+
+alias rake="$DIR/commandAllThings.sh"
+alias grunt="$DIR/commandAllThings.sh"
+alias gulp="$DIR/commandAllThings.sh"
+alias make="$DIR/commandAllThings.sh"
+alias gradle="$DIR/commandAllThings.sh"
+alias jake="$DIR/commandAllThings.sh"
 
 commands=( grunt gulp jake rake gradle make )
 installedCommands=()
