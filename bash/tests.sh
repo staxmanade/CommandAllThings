@@ -7,6 +7,8 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 commands=( grunt gulp jake rake gradle make )
 installedCommands=()
 
+exitCode = 0
+
 for i in "${commands[@]}"
 do
 	fullCommand=$(which $i | grep -v commandAllThings | head -n 1)
@@ -35,9 +37,14 @@ do
 			# execute the tests ( and also redirect stderr to stdout ) capturing output
 			OUTPUT=$( eval $j | sed -e 's/after.*μs/after ##.# μs/g')
 			echo "$OUTPUT"  | approvals "tests.$i-$j" --outdir $DIR/testoutput "$@"
+			if [ $? -gt 0 ]; then
+				exitCode=1
+			fi
     done
 
 	fi
 
 
 done
+
+exit $exitCode
