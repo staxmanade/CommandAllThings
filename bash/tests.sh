@@ -37,6 +37,7 @@ do
 			# execute the tests ( and also redirect stderr to stdout ) capturing output
 			OUTPUT=$( eval $j | sed -e 's/after.*μs/after ##.# μs/g')
 			echo "$OUTPUT"  | approvals "tests.$i-$j" --outdir $DIR/testoutput "$@"
+			echo "OUTPUT EXIT WITH: $?"
 			if [ $? -gt 0 ]; then
 				exitCode=1
 			fi
@@ -47,4 +48,5 @@ do
 
 done
 
+echo "Existing with code: $exitCode"
 exit $exitCode
