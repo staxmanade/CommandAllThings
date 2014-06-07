@@ -37,7 +37,7 @@ do
 			# execute the tests ( and also redirect stderr to stdout ) capturing output
 			OUTPUT=$( eval $j | sed -e 's/after.*μs/after ##.# μs/g')
 
-			echo "$OUTPUT"  | approvals "tests.$i-$j" --outdir $DIR/testoutput "$@"
+			echo "$OUTPUT"  | approvals "tests.$i-$j" --reporter gitdiff --outdir $DIR/testoutput "$@"
 			localExit=$?
 			if [ $localExit -gt 0 ]; then
 				echo "SETTING FAILURE EXIT!"
