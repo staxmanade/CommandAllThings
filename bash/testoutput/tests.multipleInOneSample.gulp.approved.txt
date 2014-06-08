@@ -1,0 +1,6 @@
+Using gulpfile REMOVED
+Starting 'test'...
+Hello Gulp
+Finished 'test' after ##.# μs
+Starting 'default'...
+Finished 'default' after ##.# μs

@@ -7,11 +7,27 @@ shopt -s expand_aliases
 # include the sample aliases
 . $DIR/sampleProfile.sh
 
+samplesDir="$DIR/../samples"
 
 commands=( grunt gulp jake rake gradle make )
-installedCommands=()
-
 exitCode=0
+
+
+# Should pick selected command when there are two project types in one folder
+cd "$samplesDir/multipleInOneSample"
+OUTPUT=$( gulp | sed -e 's/after.*μs/after ##.# μs/g' -e "s/Using gulpfile .*/Using gulpfile REMOVED/g" -e 's/\[..:..:..\] //g')
+echo "$OUTPUT"  | approvals "tests.multipleInOneSample.gulp" --reporter gitdiff --outdir $DIR/testoutput "$@"
+if [ $? -gt 0 ]; then
+	exitCode=1
+fi
+
+OUTPUT=$( grunt | sed -e 's/after.*μs/after ##.# μs/g' -e "s/Using gulpfile .*/Using gulpfile REMOVED/g" -e 's/\[..:..:..\] //g')
+echo "$OUTPUT"  | approvals "tests.multipleInOneSample.grunt" --reporter gitdiff --outdir $DIR/testoutput "$@"
+if [ $? -gt 0 ]; then
+	exitCode=1
+fi
+
+exit #TODO REMOVE ME
 
 for i in "${commands[@]}"
 do
@@ -23,7 +39,7 @@ do
 		echo "COMMAND: $i NOT installed. Skipping tests..."
 	else
 
-		testDir=$(cd "$DIR/../samples/${i}Sample"; pwd)
+		testDir=$(cd "$samplesDir/${i}Sample"; pwd)
 
 		echo "*** $i"
 		echo "*** Expected Testing Dir: $testDir"

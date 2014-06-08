@@ -1,0 +1,16 @@
+{
+  "name": "gruntAndGruntSample",
+  "version": "0.0.1",
+  "description": "test project",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "private": true,
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "gulp": "^3.6.2"
+  }
+}
