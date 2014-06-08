@@ -1,10 +1,9 @@
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
-alias rake="$DIR/commandAllThings.sh"
-alias grunt="$DIR/commandAllThings.sh"
-alias gulp="$DIR/commandAllThings.sh"
-alias make="$DIR/commandAllThings.sh"
-alias gradle="$DIR/commandAllThings.sh"
-alias jake="$DIR/commandAllThings.sh"
-
+function rake { originallyCalledWith='rake'; "$DIR/commandAllThings.sh" "$@"; }
+function grunt { originallyCalledWith='grunt'; "$DIR/commandAllThings.sh" "$@"; }
+function gulp { originallyCalledWith='gulp'; "$DIR/commandAllThings.sh" "$@"; }
+function make { originallyCalledWith='make'; "$DIR/commandAllThings.sh" "$@"; }
+function gradle { originallyCalledWith='gradle'; "$DIR/commandAllThings.sh" "$@"; }
+function jake { originallyCalledWith='jake'; "$DIR/commandAllThings.sh" "$@"; }
