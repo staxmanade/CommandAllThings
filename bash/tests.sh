@@ -15,6 +15,7 @@ exitCode=0
 
 # Should pick selected command when there are two project types in one folder
 cd "$samplesDir/multipleInOneSample"
+npm install
 OUTPUT=$( gulp | sed -e 's/after.*μs/after ##.# μs/g' -e "s/Using gulpfile .*/Using gulpfile REMOVED/g" -e 's/\[..:..:..\] //g')
 echo "$OUTPUT"  | approvals "tests.multipleInOneSample.gulp" --reporter gitdiff --outdir $DIR/testoutput "$@"
 if [ $? -gt 0 ]; then
