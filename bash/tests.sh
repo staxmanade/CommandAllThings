@@ -27,7 +27,6 @@ if [ $? -gt 0 ]; then
 	exitCode=1
 fi
 
-exit #TODO REMOVE ME
 
 for i in "${commands[@]}"
 do

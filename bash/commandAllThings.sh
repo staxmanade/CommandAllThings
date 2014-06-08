@@ -1,28 +1,39 @@
 #!/bin/bash
 
-command=''
+originalCommand=$originallyCalledWith
+#echo "orig: $originallyCalledWith"
+
+cmdTypes=()
 
 if [ -e "gulpfile.js" ]; then
-	command=gulp
-elif [ -e "gruntfile.js" ]; then
-	command=grunt
-elif [ -e "jakefile" ]; then
-	command=jake
-elif [ -e "makefile" ]; then
-	command=make
-elif [ -e "rakefile" ]; then
-	command=rake
-elif [ -e "build.gradle" ]; then
-	command=gradle
-else
-	echo 'CommandAllThings: could not find a known task file (ex: gruntfile.js, gulpfile.js, jakefile, makefile, build.gradle, or rakefile)'
+	cmdTypes+=(gulp)
 fi
 
-if [ -n "$command" ]; then
-	fullCommand=$(which $command | grep -v commandAllThings | head -n 1)
-	if [ $# -eq 0 ]; then
-	  $fullCommand
-    else
-	  $fullCommand "$@"
-    fi
+if [ -e "gruntfile.js" ]; then
+	cmdTypes+=(grunt)
+fi
+if [ -e "jakefile" ]; then
+	cmdTypes+=(jake)
+fi
+if [ -e "makefile" ]; then
+	cmdTypes+=(make)
+fi
+if [ -e "rakefile" ]; then
+	cmdTypes+=(rake)
+fi
+if [ -e "build.gradle" ]; then
+	cmdTypes+=(gradle)
+fi
+
+
+fullCommand=$originalCommand
+if [ ${#cmdTypes[@]} -eq 1 ]; then
+	# if there is only one project type found - let's resolve that specific one.
+	fullCommand=$(which ${cmdTypes[0]} | grep -v commandAllThings | head -n 1)
+fi
+
+if [ $# -eq 0 ]; then
+  $fullCommand
+else
+  $fullCommand "$@"
 fi
