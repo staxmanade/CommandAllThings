@@ -67,16 +67,7 @@ do
 			if [ -e "package.json" ]; then
 	            npm install > /dev/null
 			fi
-#			echo "*** Executing: $i - $j"
 			runApprovalTest "$i-$j" "$j" "TODO: (fill in msg?)"
-#			OUTPUT=$(getOutputForApproval $j)
-#			echo "$OUTPUT"  | approvals "tests.$i-$j" --reporter gitdiff --outdir $DIR/testoutput "$@"
-#			localExit=$?
-#			if [ $localExit -gt 0 ]; then
-#				echo "SETTING FAILURE EXIT!"
-#				exitCode=1
-#			fi
-#			echo "OUTPUT EXIT WITH: $localExit"
     done
 
 	fi
