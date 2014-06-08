@@ -30,7 +30,7 @@ If you have this setup, it will re-route the `gulp test` command over and execut
 | [GulpJS](http://gulpjs.com) | &#10003; | &#10003; |
 | [Invoke-Build](https://github.com/nightroman/Invoke-Build) | &#10003; | N/A |
 | [Jake](https://github.com/mde/jake) | &#10003; | &#10003; |
-| [Make](http://en.wikipedia.org/wiki/Make_(software)) | TODO? | &#10003; |
+| [Make](http://en.wikipedia.org/wiki/Make_(software)) | N/A | &#10003; |
 | [Maven](http://maven.apache.org/) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/11) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/11) |
 | [MSBuild](http://msdn.microsoft.com/en-us/library/ms164311.aspx) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/16) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/16) |
 | [Rake](http://rake.rubyforge.org/) | &#10003; | &#10003; |
