@@ -1,8 +1,10 @@
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
-# include the sample aliases
+# Allow the next line of alias includes to be expanded
 shopt -s expand_aliases
+
+# include the sample aliases
 . $DIR/sampleProfile.sh
 
 
@@ -37,7 +39,7 @@ do
 			fi
 			echo "*** Executing: $i - $j"
 			# execute the tests ( and also redirect stderr to stdout ) capturing output
-			OUTPUT=$( eval $j | sed -e 's/after.*μs/after ##.# μs/g' -e "s/Using gulpfile .*/Using gulpfile REMOVED/g")
+			OUTPUT=$( eval $j | sed -e 's/after.*μs/after ##.# μs/g' -e "s/Using gulpfile .*/Using gulpfile REMOVED/g" -e 's/\[..:..:..\] //g')
 
 			echo "$OUTPUT"  | approvals "tests.$i-$j" --reporter gitdiff --outdir $DIR/testoutput "$@"
 			localExit=$?
