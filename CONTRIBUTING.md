@@ -30,6 +30,6 @@ To run the tests you first must install the approvals command line utility using
 
 Then you can run this script
 
-`./bash/tests.approvals.sh`
+`./bash/tests.sh`
 
 
