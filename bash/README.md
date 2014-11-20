@@ -9,6 +9,8 @@ Check out the parent [../README](../README.md)
 
 This install is ugly - if anyone has a better/smoother way to do it, I'd love to hear...
 
+1. Run the install above
+
 ```bash
 curl https://raw.githubusercontent.com/staxmanade/CommandAllThings/master/bash/commandAllThings.sh > ~/commandAllThings.sh \
     && chmod +x ~/commandAllThings.sh \
@@ -17,7 +19,6 @@ curl https://raw.githubusercontent.com/staxmanade/CommandAllThings/master/bash/c
     echo "**********\nCopied 'commandAllThings.sh' and 'commandAllThingsProfile.sh' to '~\'\n\n*** NEXT STEP ***\n\n    Place this in your bash or zsh profile:\n\n   . ~/commandAllThingsProfile.sh\n"
 ```
 
-1. Run the install above
 2. Add the profile command command the above steps prints out to your `.zshrc` or `.profile`.
 
 ### But it doesn't have my tool?
