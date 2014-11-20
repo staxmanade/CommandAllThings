@@ -5,11 +5,20 @@ CommandAllThings - Bash
 
 Check out the parent [../README](../README.md)
 
-### Setup
+### Install
 
-dot source the [sampleProfile.sh](sampleProfile.sh) file in your profile.
+This install is ugly - if anyone has a better/smoother way to do it, I'd love to hear...
 
-    . sampleProfile.sh
+```bash
+curl https://raw.githubusercontent.com/staxmanade/CommandAllThings/master/bash/commandAllThings.sh > ~/commandAllThings.sh \
+    && chmod +x ~/commandAllThings.sh \
+    && curl https://raw.githubusercontent.com/staxmanade/CommandAllThings/master/bash/sampleProfile.sh > ~/commandAllThingsProfile.sh \
+    && chmod +x ~/commandAllThingsProfile.sh && \
+    echo "**********\nCopied 'commandAllThings.sh' and 'commandAllThingsProfile.sh' to '~\'\n\n*** NEXT STEP ***\n\n    Place this in your bash or zsh profile:\n\n   . ~/commandAllThingsProfile.sh\n"
+```
+
+1. Run the install above
+2. Add the profile command command the above steps prints out to your `.zshrc` or `.profile`.
 
 ### But it doesn't have my tool?
 
