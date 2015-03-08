@@ -9,6 +9,7 @@ shopt -s expand_aliases
 
 samplesDir="$DIR/../samples"
 
+# TODO: xbuild case
 commands=( grunt gulp jake rake gradle make )
 exitCode=0
 

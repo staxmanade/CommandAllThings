@@ -36,8 +36,8 @@ If you have this setup, it will re-route the `gulp test` command over and execut
 | [Maven](http://maven.apache.org/) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/11) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/11) |
 | [MSBuild](http://msdn.microsoft.com/en-us/library/ms164311.aspx) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/16) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/16) |
 | [Rake](http://rake.rubyforge.org/) | &#10003; | &#10003; |
-| [PSake](https://github.com/psake/psake) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/12) | N/A |
-| [Xbuild](http://www.mono-project.com/Microsoft.Build) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/15) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/15) |
+| [PSake](https://github.com/psake/psake) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/12) |  |
+| [Xbuild](http://www.mono-project.com/Microsoft.Build) | [TODO](https://github.com/staxmanade/CommandAllThings/issues/15) | &#10003; |
 | &nbsp; |  |  |
 | [Suggest another here...](https://github.com/staxmanade/CommandAllThings/issues/new) |  |  |
 

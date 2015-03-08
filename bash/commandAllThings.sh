@@ -25,6 +25,16 @@ if [ -e "build.gradle" ]; then
 	cmdTypes+=(gradle)
 fi
 
+# Support for xbuild
+if [ -e *.proj ]; then
+	if [ $# -eq 0 ]; then
+		xbuild
+	else
+		xbuild "/t:$@"
+		exit $?
+	fi
+fi
+
 
 fullCommand=$originalCommand
 if [ ${#cmdTypes[@]} -eq 1 ]; then

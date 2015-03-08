@@ -7,3 +7,4 @@ function gulp { export originallyCalledWith='gulp'; "$DIR/commandAllThings.sh" "
 function make { export originallyCalledWith='make'; "$DIR/commandAllThings.sh" "$@"; }
 function gradle { export originallyCalledWith='gradle'; "$DIR/commandAllThings.sh" "$@"; }
 function jake { export originallyCalledWith='jake'; "$DIR/commandAllThings.sh" "$@"; }
+function xbuild { export originallyCalledWith='xbuild'; "$DIR/commandAllThings.sh" "$@"; }
