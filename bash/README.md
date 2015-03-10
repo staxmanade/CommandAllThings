@@ -19,7 +19,7 @@ curl https://raw.githubusercontent.com/staxmanade/CommandAllThings/master/bash/c
     echo "**********\nCopied 'commandAllThings.sh' and 'commandAllThingsProfile.sh' to '~\'\n\n*** NEXT STEP ***\n\n    Place this in your bash or zsh profile:\n\n   . ~/commandAllThingsProfile.sh\n"
 ```
 
-2. Add the profile command command the above steps prints out to your `.zshrc` or `.profile`.
+2. Update your `.zshrc` or `.profile` profile to load the aliases EX: `. ~/commandAllThingsProfile.sh`
 
 ### But it doesn't have my tool?
 
