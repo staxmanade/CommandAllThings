@@ -5,6 +5,10 @@ originalCommand=$originallyCalledWith
 
 cmdTypes=()
 
+if [ -e "package.json" ]; then
+	cmdTypes+=(npm)
+fi
+
 if [ -e "gulpfile.js" ]; then
 	cmdTypes+=(gulp)
 fi
